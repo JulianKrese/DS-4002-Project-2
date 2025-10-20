@@ -6,6 +6,8 @@ This project analyzes the Charlottesville Open Data Portal to train various mode
 * **`/SCRIPTS`**: Reusable code for data pulls, cleaning, modeling, plotting.
 * **`/DATA`**: All data states, including intial and final.
 * **`/OUTPUT`**: Final figures and metrics used in the write-up, as well as figures from MI2.
+* **`LICENSE`**: An MIT license for our project
+* **`requirements.txt`**: Necessary package installations
 
 ## Software and Platform
 **Software stack**
@@ -33,9 +35,9 @@ Below is the project's folder structure.
 DS-4002-Project1-GPT-6.0
 ├── DATA/                                   : includes all data
 │   ├── Final/                                  : final data
-│   │   └── ____                                    : ----**TBD**----
+│   │   └── cleaned_parking_tickets.csv             : processed parking ticket file, dropping unecessary columns and encoding catgeorical variables
 │   ├── Initial/                                : initial data
-│   │   └── ____                                    : ----**TBD**----
+│   │   └── Parking_Tickets.csv                     : un-processed parking ticket file
 |   └── README                                  : Metadata explanation
 ├── OUTPUT/                                 : includes final outputs from "Analyze.py"
 │   ├── Final/                                  : final scores for each user
@@ -44,13 +46,12 @@ DS-4002-Project1-GPT-6.0
 │       ├── tickets_by_day_of_week_and_street.png   : EDA chart that counts grouped occurences of parking tickets by day and week
 │       └── tickets_by_day_of_week.png              : EDA chart that counts grouped occurences of parking tickets by day
 ├── SCRIPTS/                                : folder holding all scripts
-│   ├── Analyze.py                              : final script that combines all others into a "one shot" script
-│   └── ____                                    : ----**TBD**---- 
+│   ├── clean_parking_data.py                   : a script for processing the intial data
+│   └── analyze.py                              : final script that combines all others into a "one shot"
 ├── LICENSE.md                              : general file - MIT licensing
 ├── requirements.txt                        : general file - contains necessary packages
 └── venv/                                   : general file - private environment specific to a user
 ```
-
 
 ## Replication Instructions
 
