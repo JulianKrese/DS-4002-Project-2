@@ -56,16 +56,14 @@ def clean_parking_data():
         except:
             return time_str.strip()
     
-    cleaned_data['TimeIssued'] = time_series.apply(format_time)
-    
     print("Adding time-based encoding...")
     def extract_hour(time_str):
         try:
-            if ':' in time_str and ('AM' in time_str or 'PM' in time_str):
-                time_obj = datetime.strptime(time_str.strip(), '%I:%M %p')
+            if ':' in time_str:
+                time_obj = datetime.strptime(time_str.strip(), '%H:%M')
                 return time_obj.hour
-            elif len(time_str) == 4 and time_str.isdigit():
-                return int(time_str[:2])
+            elif len(time_str.strip()) == 4 and time_str.strip().isdigit():
+                return int(time_str.strip()[:2])
             return None
         except:
             return None
@@ -82,22 +80,21 @@ def clean_parking_data():
         else:
             return 'Night'
     
-    cleaned_data['Hour'] = cleaned_data['TimeIssued'].apply(extract_hour)
-    cleaned_data['TimePeriod'] = cleaned_data['Hour'].apply(get_time_period)
+    original_hours = time_series.apply(extract_hour)
+    cleaned_data['TimePeriod'] = original_hours.apply(get_time_period)
     
     print("Processing violation descriptions...")
     cleaned_data['ViolationDescription'] = df['ViolationDescription']
     
     print("Removing rows with missing data...")
     initial_count = len(cleaned_data)
-    cleaned_data = cleaned_data.dropna(subset=['IssuedDate', 'StreetName', 'TimeIssued', 'ViolationDescription'])
+    cleaned_data = cleaned_data.dropna(subset=['IssuedDate', 'StreetName', 'ViolationDescription'])
     final_count = len(cleaned_data)
     
     print(f"Removed {initial_count - final_count} rows with missing data")
     print(f"Final data shape: {cleaned_data.shape}")
     
     print(f"Saving cleaned data to {output_file}...")
-    # Save with proper encoding for time series data
     cleaned_data.to_csv(output_file, index=False, encoding='utf-8')
     
     print("Data cleaning completed successfully!")
