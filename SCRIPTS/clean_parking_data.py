@@ -21,14 +21,16 @@ def clean_parking_data():
     df['DateIssued'] = pd.to_datetime(df['DateIssued'], errors='coerce')
 
     df = df.dropna(subset=['DateIssued'])
+    
+    print("Filtering to years 2000-2024...")
+    df = df[(df['DateIssued'].dt.year >= 2000) & (df['DateIssued'].dt.year <= 2024)]
+    print(f"Records after year filtering: {len(df)}")
 
     df['DateTime'] = pd.to_datetime(df['DateIssued'].dt.strftime('%Y-%m-%d') + ' ' + df['TimeIssued'].astype(str), errors='coerce')
     cleaned_data['IssuedDate'] = df['DateTime'].dt.strftime('%m/%d/%Y, %I:%M %p')
     
     print("Adding time series features...")
     cleaned_data['Year'] = df['DateIssued'].dt.year
-    cleaned_data['Month'] = df['DateIssued'].dt.month
-    cleaned_data['Day'] = df['DateIssued'].dt.day
     cleaned_data['DayOfWeek'] = df['DateIssued'].dt.day_name()
     cleaned_data['Quarter'] = df['DateIssued'].dt.quarter
     
