@@ -58,17 +58,17 @@ DS-4002-Project1-GPT-6.0
     - Install Python 3.10+ and Git
         - more information can be found at https://www.python.org/downloads/ and https://git-scm.com/downloads
     - clone this repository (use the link https://github.com/JulianKrese/DS-4002-Project-2)
-        1) clone --> `git clone https://github.com/JulianKrese/DS-4002-Project-2`
-        2) enter the folder --> `cd DS-4002-Project-2`
+        - clone --> `git clone https://github.com/JulianKrese/DS-4002-Project-2`
+        - enter the folder --> `cd DS-4002-Project-2`
 2) Project Installations
     - Create python environment
-        1) macOS/Linux --> `python -m venv .venv && source .venv/bin/activate`
-        1) Windows --> `py -m venv .venv && .venv\Scripts\activate`
+        - macOS/Linux --> `python -m venv .venv && source .venv/bin/activate`
+        - Windows --> `py -m venv .venv && .venv\Scripts\activate`
     - Install required packages
-        2) within the terminal, `pip install -r requirements.txt`
+        - within the terminal, `pip install -r requirements.txt`
     - Register the Jupyter kernel (if using notebooks outside VS Code):
-        3) `pip install ipykernel`
-        3) `python -m ipykernel install --user --name=.venv`
+        - `pip install ipykernel`
+        - `python -m ipykernel install --user --name=.venv`
         - alternatively, in VS code you may have to define your interpreter as the one located in your venv. 
 3) Run
     - run `analyze.py`
