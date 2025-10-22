@@ -47,6 +47,7 @@ DS-4002-Project1-GPT-6.0
 │       └── tickets_by_day_of_week.png              : EDA chart that counts grouped occurences of parking tickets by day
 ├── SCRIPTS/                                : folder holding all scripts
 │   ├── clean_parking_data.py                   : a script for processing the intial data
+│   ├── ____                                    : ----**TBD**----
 │   └── analyze.py                              : final script that combines all others into a "one shot"
 ├── LICENSE.md                              : general file - MIT licensing
 ├── requirements.txt                        : general file - contains necessary packages
@@ -63,7 +64,7 @@ DS-4002-Project1-GPT-6.0
 2) Project Installations
     - Create python environment
         - macOS/Linux --> `python -m venv .venv && source .venv/bin/activate`
-        - Windows --> `py -m venv .venv && .venv\Scripts\activate`
+        - Windows --> `python3 -m venv .venv && .venv\Scripts\activate`
     - Install required packages
         - within the terminal, `pip install -r requirements.txt`
     - Register the Jupyter kernel (if using notebooks outside VS Code):
