@@ -31,6 +31,9 @@ awareness and transparency in parking policy– not to encourage rule-breaking.
 
 # References 
 [1] “Parking Tickets.” City of Charlottesville, 2017. https://opendata.charlottesville.org/datasets/0ae373f4c2884abbb296500125bb9d8a_7/explore. 
+
 [2] GeeksforGeeks. 2025. “Evaluation Metrics in Machine Learning.” GeeksforGeeks. July 15, 2025. https://www.geeksforgeeks.org/machine-learning/metrics-for-machine-learning-model/.
+
 [3]“6.3. Preprocessing data — scikit-learn 0.22.2 documentation,” scikit-learn.org. https://scikit-learn.org/stable/modules/preprocessing.html#encoding-categorical-features
+
 [4]GeeksforGeeks, “Advantages and Disadvantages of Logistic Regression,” GeeksforGeeks, Aug. 25, 2020. https://www.geeksforgeeks.org/data-science/advantages-and-disadvantages-of-logistic-regression/
