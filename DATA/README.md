@@ -4,7 +4,7 @@ This dataset was created to investigate the research question: Can we predict wh
 
 The dataset enables statistical and machine learning analysis to identify temporal and spatial trends in parking enforcement, such as when and where tickets are most likely to occur. 
 - Initial Data: The dataset is stored in a CSV downloaded from the City of Charlottesville Open Data Portal.
-- Final Data: 
+- Final Data: The model will be able to predict given a details of someone parking and the probabilities of the prediction will be stored in CSV files for each time period tested. 
 
 # Provenance
 The data was collected through an ETL pipeline, where we trained the models and evaluated them.
