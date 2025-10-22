@@ -8,6 +8,7 @@ This project analyzes the Charlottesville Open Data Portal to train various mode
 * **`/OUTPUT`**: Final figures and metrics used in the write-up, as well as figures from MI2.
 * **`LICENSE`**: An MIT license for our project
 * **`requirements.txt`**: Necessary package installations
+* **`.gitignore`**: Ignore local python virtual environment
 
 ## Software and Platform
 **Software stack**
@@ -18,8 +19,8 @@ This project analyzes the Charlottesville Open Data Portal to train various mode
 
 **Key Python packages**
 
-* Standard Library: `datetime`, `os`
-* External: `pandas`
+* Standard Library: `datetime`, `os`, `joblib`, `shutil`
+* External: `pandas`, `sklearn.preprocessing (StandardScaler)`, `sklearn.ensemble (IsolationForest)`, `sklearn.metrics (accuracy_score)`
 
 > Install all via `pip install -r requirements.txt`.
 
@@ -40,15 +41,15 @@ DS-4002-Project1-GPT-6.0
 │   │   └── Parking_Tickets.csv                     : un-processed parking ticket file
 |   └── README                                  : Metadata explanation
 ├── OUTPUT/                                 : includes final outputs from "analyze.py"
-│   ├── Final/                                  :
-│   │   └── ____                                    : ----**TBD**----
+│   ├── Final/                                  : -
+│   │   └── models                                  : all generated models and their corresponding scalers
 │   └── M12/                                    : EDA for MI2 shown in DATA/README.md
 │       ├── tickets_by_day_of_week_and_street.png   : EDA chart that counts grouped occurences of parking tickets by day and week
 │       └── tickets_by_day_of_week.png              : EDA chart that counts grouped occurences of parking tickets by day
 ├── SCRIPTS/                                : folder holding all scripts
 │   ├── clean_parking_data.py                   : a script for processing the intial data
-│   ├── ____                                    : ----**TBD**----
-│   └── analyze.py                              : final script that combines all others into a "one shot"
+│   ├── create_models.py                        : a script for training models on the time split
+│   └── score_models.py                         : a script for scoring trained models on accuracy
 ├── LICENSE.md                              : general file - MIT licensing
 ├── requirements.txt                        : general file - contains necessary packages
 └── .venv                                   : general file - private environment specific to a user
@@ -72,8 +73,11 @@ DS-4002-Project1-GPT-6.0
         - `python -m ipykernel install --user --name=.venv`
         - alternatively, in VS code you may have to define your interpreter as the one located in your venv. 
 3) Run
-    - run `analyze.py`
-    - view `/DS-4002-Project-2/OUTPUT/Final/` for the resulting model and metrics
+    - If you want to recreate all final files, run in order...
+        1) `clean_parking_data.py` to re-create the cleaned data
+        2) `create_models.py` to re-create the models on the train split
+        3) `score_models.py` to re-score the models
+    - View the output of `score_models.py` to see the resulting accuracies for each model.
 
 ### References
 - [1] “Parking Tickets.” City of Charlottesville, 2017. https://opendata.charlottesville.org/datasets/0ae373f4c2884abbb296500125bb9d8a_7/explore. 
