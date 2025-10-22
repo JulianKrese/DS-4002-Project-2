@@ -95,12 +95,10 @@ for model_file in model_files:
     prec = precision_score(y_true, y_pred)
     rec = recall_score(y_true, y_pred)
 
-    # Store results
+    # Store results, only need accuracy because the others are irrelevant when our dataset only contains positives
     results.append({
         'Model': label,
         'Accuracy': acc,
-        'Precision': prec,
-        'Recall': rec
     })
 
 # -------------------------------

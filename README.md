@@ -1,6 +1,6 @@
 # DS-4002-Project-2
 ## We Hate Tickets - A ticket prediction model for Charlottesville VA
-This project analyzes the Charlottesville Open Data Portal to train various models based on different time frames of tickets within the city. In the end, we arrived at one final model that had the greatest accuracy at ----**TBD**----%, which was trained on the ----****TBD**----** time frame.
+This project analyzes the Charlottesville Open Data Portal to train various models based on different time frames of tickets within the city. In the end, we arrived at one final model that had the greatest accuracy at **96.7%**, which was trained on the **2010-2014** time frame.
 
 ## Contents
 * **`/SCRIPTS`**: Reusable code for data pulls, cleaning, modeling, plotting.
@@ -42,7 +42,7 @@ DS-4002-Project1-GPT-6.0
 |   └── README                                  : Metadata explanation
 ├── OUTPUT/                                 : includes final outputs from "analyze.py"
 │   ├── Final/                                  : -
-│   │   └── models                                  : all generated models and their corresponding scalers
+│   │   └── models/                                 : all generated models and their corresponding scalers
 │   └── M12/                                    : EDA for MI2 shown in DATA/README.md
 │       ├── tickets_by_day_of_week_and_street.png   : EDA chart that counts grouped occurences of parking tickets by day and week
 │       └── tickets_by_day_of_week.png              : EDA chart that counts grouped occurences of parking tickets by day
@@ -77,6 +77,8 @@ DS-4002-Project1-GPT-6.0
         1) `clean_parking_data.py` to re-create the cleaned data
         2) `create_models.py` to re-create the models on the train split
         3) `score_models.py` to re-score the models
+        - for running troubleshooting, ensure you are in the same directory as the files (`cd SCRIPTS`) as the data may have issues loading otherwise.
+            - can run without issue `cd SCRIPTS` and then `python <script_name>.py`
     - View the output of `score_models.py` to see the resulting accuracies for each model.
 
 ### References
