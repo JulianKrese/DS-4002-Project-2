@@ -26,8 +26,8 @@ awareness and transparency in parking policy– not to encourage rule-breaking.
 
 
 # Explanatory Plots 
-<img width="591" height="368" alt="Screenshot 2025-10-22 at 3 46 00 PM" src="https://github.com/user-attachments/assets/8bbeb01d-db0d-4ca8-bd83-60a4e2d9083a" />
-<img width="576" height="356" alt="Screenshot 2025-10-22 at 3 46 23 PM" src="https://github.com/user-attachments/assets/6915b451-961b-4004-96c5-35637fa0a32e" />
+<img width="591" height="368" alt="Screenshot 2025-10-22 at 3 46 00 PM" src="../OUTPUT/MI2/tickets_by_day_of_week.png" />
+<img width="576" height="356" alt="Screenshot 2025-10-22 at 3 46 23 PM" src="../OUTPUT/MI2/tickets_by_day_of_week_and_street.png" />
 
 # References 
 [1] “Parking Tickets.” City of Charlottesville, 2017. https://opendata.charlottesville.org/datasets/0ae373f4c2884abbb296500125bb9d8a_7/explore. 
