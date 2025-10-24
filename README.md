@@ -1,6 +1,6 @@
 # DS-4002-Project-2
 ## We Hate Tickets - A ticket prediction model for Charlottesville VA
-This project analyzes the Charlottesville Open Data Portal to train various models based on different time frames of tickets within the city. In the end, we arrived at one final model that had the greatest accuracy at **96.7%**, which was trained on the **2010-2014** time frame.
+This project analyzes the Charlottesville Open Data Portal to train various models based on different time frames of tickets within the city. In the end, we arrived at one final model that had the greatest accuracy at **96.6%**, which was trained on the **2009-2013** time frame.
 
 ## Contents
 * **`/SCRIPTS`**: Reusable code for data pulls, cleaning, modeling, plotting.
@@ -73,13 +73,11 @@ DS-4002-Project1-GPT-6.0
         - `python -m ipykernel install --user --name=.venv`
         - alternatively, in VS code you may have to define your interpreter as the one located in your venv. 
 3) Run
-    - If you want to recreate all final files, run in order...
+    - If you want to recreate all final files, within the base directory, run in order...
         1) `clean_parking_data.py` to re-create the cleaned data
         2) `create_models.py` to re-create the models on the train split
         3) `score_models.py` to re-score the models
-        - for running troubleshooting, ensure you are in the same directory as the files (`cd SCRIPTS`) as the data may have issues loading otherwise.
-            - can run without issue `cd SCRIPTS` and then `python <script_name>.py`
-    - View the output of `score_models.py` to see the resulting accuracies for each model.
+    - View the output in `/OUTPUT/Final`, which includes the models as well as the performance in `model_performance.csv`.
 
 ### References
 - [1] “Parking Tickets.” City of Charlottesville, 2017. https://opendata.charlottesville.org/datasets/0ae373f4c2884abbb296500125bb9d8a_7/explore. 

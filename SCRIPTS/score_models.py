@@ -29,7 +29,7 @@ from sklearn.metrics import precision_score, recall_score  # optional if needed
 # -------------------------------
 # 1. Load test data
 # -------------------------------
-test_file = "../DATA/Final/encoded_parking_tickets.csv"
+test_file = "./DATA/Final/encoded_parking_tickets.csv"
 df_test = pd.read_csv(test_file)
 
 # Only use 2024 for testing
@@ -50,7 +50,7 @@ X_test = df_test[features]
 # -------------------------------
 # 3. Load trained models
 # -------------------------------
-model_dir = "../OUTPUT/Final/models"
+model_dir = "./OUTPUT/Final/models"
 
 # Identify all Isolation Forest model files
 model_files = [
@@ -108,3 +108,5 @@ results_df = pd.DataFrame(results).sort_values('Accuracy', ascending=False)
 
 print("\n--- Model performance on 2024 test set ---")
 print(results_df)
+
+results_df.to_csv('./OUTPUT/Final/model_performance.csv', index=False)

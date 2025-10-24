@@ -29,7 +29,7 @@ import shutil
 # -------------------------------
 # 1. Load encoded parking ticket data
 # -------------------------------
-data_file = "../DATA/Final/encoded_parking_tickets.csv"
+data_file = "./DATA/Final/encoded_parking_tickets.csv"
 df = pd.read_csv(data_file)
 
 # -------------------------------
@@ -43,7 +43,7 @@ X_features = features.copy()  # list of feature names
 # -------------------------------
 # 3. Create output directory for models
 # -------------------------------
-model_dir = "../OUTPUT/Final/models"
+model_dir = "./OUTPUT/Final/models"
 
 # Remove old models directory if it exists, to avoid conflicts
 if os.path.exists(model_dir):
@@ -93,7 +93,7 @@ def get_time_splits(df, start_year=2000, end_year=2023, chunk=5):
     return splits, test_df
 
 # Generate splits and test set
-splits, test_df = get_time_splits(df, start_year=df['Year'].min(), end_year=df['Year'].max())
+splits, test_df = get_time_splits(df, start_year=df['Year'].min(), end_year=2023, chunk=5)
 
 # -------------------------------
 # 5. Train Isolation Forest models for each split
