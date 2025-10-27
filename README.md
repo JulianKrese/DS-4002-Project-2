@@ -20,7 +20,7 @@ This project analyzes the Charlottesville Open Data Portal to train various mode
 **Key Python packages**
 
 * Standard Library: `datetime`, `os`, `joblib`, `shutil`
-* External: `pandas`, `sklearn.preprocessing (StandardScaler)`, `sklearn.ensemble (IsolationForest)`, `sklearn.metrics (accuracy_score)`, 
+* External: `pandas`, `sklearn.preprocessing (StandardScaler)`, `sklearn.ensemble (IsolationForest)`, `sklearn.metrics (accuracy_score)`, `matplotlib.pyplot (plt)`
 
 > Install all via `pip install -r requirements.txt`.
 

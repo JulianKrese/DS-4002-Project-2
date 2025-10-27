@@ -6,7 +6,8 @@ Description:
     parking tickets (year 2024). It scales the test features, predicts anomalies,
     and evaluates model performance. For this dataset, all test instances are
     positive tickets. Predictions map anomaly (-1) to "no ticket" and normal (1)
-    to "ticket". Accuracy is calculated for each model.
+    to "ticket". Accuracy is calculated for each model, stored in a csv called model_performance.csv,
+    with a corresponding bar graph stored in model_performance.png.
 
 Usage:
     python score_isolation_forest.py
