@@ -20,7 +20,7 @@ This project analyzes the Charlottesville Open Data Portal to train various mode
 **Key Python packages**
 
 * Standard Library: `datetime`, `os`, `joblib`, `shutil`
-* External: `pandas`, `sklearn.preprocessing (StandardScaler)`, `sklearn.ensemble (IsolationForest)`, `sklearn.metrics (accuracy_score)`
+* External: `pandas`, `sklearn.preprocessing (StandardScaler)`, `sklearn.ensemble (IsolationForest)`, `sklearn.metrics (accuracy_score)`, 
 
 > Install all via `pip install -r requirements.txt`.
 
@@ -65,7 +65,8 @@ DS-4002-Project1-GPT-6.0
 2) Project Installations
     - Create python environment
         - macOS/Linux --> `python -m venv .venv && source .venv/bin/activate`
-        - Windows --> `python3 -m venv .venv && .venv\Scripts\activate`
+        - Windows --> `python -m venv .venv && .venv\Scripts\activate`
+            - Note, if you are user a newer python it may be `python3 ...` for all commands
     - Install required packages
         - within the terminal, `pip install -r requirements.txt`
     - Register the Jupyter kernel (if using notebooks outside VS Code):

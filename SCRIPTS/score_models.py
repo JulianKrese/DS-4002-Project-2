@@ -17,6 +17,7 @@ Inputs:
 
 Outputs:
     - Printed DataFrame showing accuracy of each model on 2024 test set
+    - A bar graph of model accuracies saved as ../OUTPUT/Final/model_performance.png
 ===============================================================================
 """
 
@@ -24,7 +25,7 @@ import pandas as pd
 import joblib
 from sklearn.metrics import accuracy_score
 import os
-from sklearn.metrics import precision_score, recall_score  # optional if needed
+import matplotlib.pyplot as plt
 
 # -------------------------------
 # 1. Load test data
@@ -92,8 +93,6 @@ for model_file in model_files:
     # 4a. Compute performance metrics
     # -------------------------------
     acc = accuracy_score(y_true, y_pred)
-    prec = precision_score(y_true, y_pred)
-    rec = recall_score(y_true, y_pred)
 
     # Store results, only need accuracy because the others are irrelevant when our dataset only contains positives
     results.append({
@@ -109,4 +108,36 @@ results_df = pd.DataFrame(results).sort_values('Accuracy', ascending=False)
 print("\n--- Model performance on 2024 test set ---")
 print(results_df)
 
+# save the csv to final output folder
 results_df.to_csv('./OUTPUT/Final/model_performance.csv', index=False)
+
+# create and save the bar graph to final output folder
+graph = results_df.plot.bar(
+    x='Model',
+    y='Accuracy',
+    legend=False,
+    ylim=(0.75, 0.9),
+    title='Isolation Forest Model Performance on 2024 Test Set'
+)
+
+graph = results_df.plot.bar(
+    x='Model',
+    y='Accuracy',
+    legend=False,
+    ylim=(0.75, 1),
+    title='Isolation Forest Model Performance on 2024 Test Set'
+)
+
+# Label the y-axis
+plt.ylabel('Accuracy (%)')
+
+# Convert tick labels to percentages
+plt.gca().set_yticklabels([f'{y * 100:.0f}%' for y in plt.gca().get_yticks()])
+
+# Add a horizontal goal line at 80%
+plt.axhline(y=0.8, color='red', linestyle='--', linewidth=2, label='Goal: 80%')
+
+plt.legend()
+plt.tight_layout()
+plt.savefig('model_performance.png', dpi=300, bbox_inches='tight')
+plt.show()
