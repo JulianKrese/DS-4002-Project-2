@@ -116,14 +116,6 @@ graph = results_df.plot.bar(
     x='Model',
     y='Accuracy',
     legend=False,
-    ylim=(0.75, 0.9),
-    title='Isolation Forest Model Performance on 2024 Test Set'
-)
-
-graph = results_df.plot.bar(
-    x='Model',
-    y='Accuracy',
-    legend=False,
     ylim=(0.75, 1),
     title='Isolation Forest Model Performance on 2024 Test Set'
 )
@@ -139,5 +131,5 @@ plt.axhline(y=0.8, color='red', linestyle='--', linewidth=2, label='Goal: 80%')
 
 plt.legend()
 plt.tight_layout()
-plt.savefig('model_performance.png', dpi=300, bbox_inches='tight')
-plt.show()
+plt.savefig('./OUTPUT/Final/model_performance.png', dpi=300, bbox_inches='tight')
+plt.close()
